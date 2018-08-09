@@ -1,0 +1,21 @@
+<div layout="row" layout-align="center start">
+  <h1>Peliculas</h1>
+</div>
+
+<div layout layout-wrap>
+  <md-card md-colors="{background: 'blue-900'}" flex="30" flex-xs="100" ng-repeat="pelicula in vm.peliculas">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{ pelicula.titulo }}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>Director: {{ pelicula.director }}</p>
+      <p>Descripcion: {{ pelicula.descripcion }}</p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="start center">
+      <md-button class="md-raised">Ver Pelicula</md-button>
+    </md-card-actions>
+  </md-card>
+
+</div>
