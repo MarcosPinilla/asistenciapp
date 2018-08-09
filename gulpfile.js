@@ -21,7 +21,7 @@ gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
 
-task('deploy', () => src('./dist/**/*').pipe(ghPages()));
+task('deploy', () => src('./src/**/*').pipe(ghPages()));
 
 function reloadBrowserSync(cb) {
   browserSync.reload();
