@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const {src, task}= require('gulp');
 const ghPages = require('gulp-gh-pages');
 const HubRegistry = require('gulp-hub');
 const browserSync = require('browser-sync');
@@ -19,7 +20,8 @@ gulp.task('serve', gulp.series('inject', 'watch', 'browsersync'));
 gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
-gulp.task('deploy', () => src('./dist/**/*').pipe(ghPages()));
+
+task('deploy', () => src('./dist/**/*').pipe(ghPages()));
 
 function reloadBrowserSync(cb) {
   browserSync.reload();
